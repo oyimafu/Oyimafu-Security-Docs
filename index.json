@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ex1",
+    "title": "Enable Data Security Protections for AI Workloads",
+    "description": "Set up Microsoft Defender for Cloud, enable the AI Services plan, assign security policies, and control access using Entra ID RBAC.",
+    "file": "Secure_AI_Solutions_in_the_Cloud/index.html",
+    "badge": "Lab 1 · Ex 1",
+    "icon": "🛡️",
+    "color": "blue",
+    "tasks": 4,
+    "duration": "~30 min",
+    "status": "live"
+  },
+  {
+    "id": "ex2",
+    "title": "Lab 1 — Coming Soon",
+    "description": "This lab guide is currently being prepared. Check back soon.",
+    "file": "Secure_AI_Solutions_in_the_Cloud/lab1.html",
+    "badge": "Lab 1 · Ex 2",
+    "icon": "🔍",
+    "color": "green",
+    "tasks": 0,
+    "duration": "TBA",
+    "status": "soon"
+  },
+  {
+    "id": "ex3",
+    "title": "Lab 2 — Coming Soon",
+    "description": "This lab guide is currently being prepared. Check back soon.",
+    "file": "Secure_AI_Solutions_in_the_Cloud/lab2.html",
+    "badge": "Lab 1 · Ex 3",
+    "icon": "⚙️",
+    "color": "yellow",
+    "tasks": 0,
+    "duration": "TBA",
+    "status": "soon"
+  }
+]
