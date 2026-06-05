@@ -176,20 +176,46 @@
 
     async function loadLabs() {
       const grid = document.getElementById('labs-grid');
-      try {
-        const res = await fetch('labs.json?v=' + Date.now());
-        if (!res.ok) throw new Error('Could not load labs.json');
-        const labs = await res.json();
-        grid.innerHTML = labs.map((lab, i) => buildCard(lab, i)).join('');
-        const live = labs.filter(l => l.status === 'live');
-        const totalTasks = live.reduce((sum, l) => sum + (l.tasks || 0), 0);
-        document.getElementById('total-count').textContent = labs.length;
-        document.getElementById('live-count').textContent = live.length;
-        document.getElementById('task-count').textContent = totalTasks;
-        document.getElementById('live-label').textContent = `${live.length} of ${labs.length} published`;
-      } catch (err) {
-        grid.innerHTML = `<div class="loading" style="color:#f87171">Could not load labs.json<br><span style="font-size:11px;color:#6b7280;margin-top:8px;display:block">${err.message}</span></div>`;
+
+      // Try multiple locations so it works regardless of where labs.json lives
+      const candidates = [
+        'Secure_AI_Solutions_in_the_Cloud/labs.json',
+        'Secure_AI_Solutions_in_the_Cloud/index.json',
+        'labs.json'
+      ];
+
+      let labs = null;
+
+      for (const path of candidates) {
+        try {
+          const res = await fetch(path + '?v=' + Date.now());
+          if (res.ok) {
+            labs = await res.json();
+            break; // found it, stop trying
+          }
+        } catch (e) {
+          // try next path
+        }
       }
+
+      if (!labs) {
+        grid.innerHTML = `
+          <div class="loading" style="color:#f87171">
+            Could not load labs.json<br>
+            <span style="font-size:11px;color:#6b7280;margin-top:8px;display:block">
+              Make sure labs.json (or index.json) exists in your repo.
+            </span>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = labs.map((lab, i) => buildCard(lab, i)).join('');
+      const live = labs.filter(l => l.status === 'live');
+      const totalTasks = live.reduce((sum, l) => sum + (l.tasks || 0), 0);
+      document.getElementById('total-count').textContent = labs.length;
+      document.getElementById('live-count').textContent = live.length;
+      document.getElementById('task-count').textContent = totalTasks;
+      document.getElementById('live-label').textContent = `${live.length} of ${labs.length} published`;
     }
 
     loadLabs();
