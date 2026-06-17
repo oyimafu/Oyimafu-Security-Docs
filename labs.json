@@ -25,14 +25,27 @@
   },
   {
     "id": "ex3",
-    "title": "Lab 1 — Ex 3 Coming Soon",
-    "description": "This lab guide is currently being prepared. Check back soon.",
-    "file": "Secure_AI_Solutions_in_the_Cloud/lab1.html",
-    "badge": "Lab 1 · Ex 3",
+    "title": "Lab 3 — Configure AI Project Access & Guardrails",
+    "description": "Learn how to control who can work inside Foundry projects, create blocklists to stop confidential terms from leaking through AI, and configure content filters that protect both inputs and outputs.",
+    "file": "Secure_AI_Solutions_in_the_Cloud/lab3.html",
+    "badge": "Lab 1 · Exercise 3 · SC-5009",
     "icon": "⚙️",
     "color": "yellow",
     "tasks": 0,
-    "duration": "TBA",
-    "status": "soon"
+    "duration": "~35 min",
+    "status": "live"
+  }
+
+    {
+    "id": "ex4",
+    "title": "Configure Permissions for AI Workloads",
+    "description": "Grant your app registration the right access to Azure AI Foundry, Key Vault secrets, and Microsoft Graph — without over-provisioning.",
+    "file": "Secure_AI_Solutions_in_the_Cloud/lab4.html",
+    "badge": "Lab 2 · Exercise 2 · SC-5009",
+    "icon": "⚙️",
+    "color": "yellow",
+    "tasks": 0,
+    "duration": "~35 min",
+    "status": "live"
   }
 ]
