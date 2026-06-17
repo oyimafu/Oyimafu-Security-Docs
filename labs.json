@@ -34,9 +34,8 @@
     "tasks": 0,
     "duration": "~35 min",
     "status": "live"
-  }
-
-    {
+  },
+  {
     "id": "ex4",
     "title": "Configure Permissions for AI Workloads",
     "description": "Grant your app registration the right access to Azure AI Foundry, Key Vault secrets, and Microsoft Graph — without over-provisioning.",
